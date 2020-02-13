@@ -79,7 +79,7 @@ phin({
   async function getSQSMessage(queueUrl) {
     let receiveMessageInput = {
       QueueUrl: queueUrl,
-      WaitTimeSeconds: 2, // Use long-polling
+      WaitTimeSeconds: 0.2, // Use polling
     }
 
     return sqsClient.receiveMessage(receiveMessageInput).promise();
